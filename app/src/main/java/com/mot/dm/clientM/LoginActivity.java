@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mot.dm.R;
-import com.mot.dm.client.delegation.ServiceDelegation;
-import com.mot.dm.common.util.SecurityUtils;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,11 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ServiceDelegation delegation = ServiceDelegation.getInstance();
-                StringBuilder errorType = new StringBuilder();
-                boolean result = SecurityUtils.login("superuser", "superuser", errorType);
-
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 EditText editText = (EditText)findViewById(R.id.user_name);
                 String userName = editText.getText().toString();
