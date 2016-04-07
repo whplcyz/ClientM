@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">iTM Client Mobile</string>
+    <string name="all_agency">All Agencies</string>
+    <string name="cancel">Cancel</string>
+    <string name="fire">OK</string>
+    <string name="dialog_fire_missiles">Do you want to exit iTM Client?</string>
+
+</resources>

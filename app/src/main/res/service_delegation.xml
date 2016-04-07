@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="policyService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/PolicyService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.PolicyService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.PolicyService</value></property>
+    </bean>
+
+    <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/UserService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.UserService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.UserService</value></property>
+    </bean>
+
+    <bean id="deviceTypeService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/DeviceTypeService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.DeviceTypeService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.DeviceTypeService</value></property>
+    </bean>
+
+    <bean id="softwareService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/SoftwareService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.SoftwareService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.SoftwareService</value></property>
+    </bean>
+
+
+    <bean id="releasePacketService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/ReleasePacketService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.ReleasePacketService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="deviceService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/DeviceService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.DeviceService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.DeviceService</value></property>
+    </bean>
+
+    <bean id="parameterService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/ParameterService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.ParameterService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.ParameterService</value></property>
+    </bean>
+
+    <bean id="agencyService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/AgencyService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.AgencyService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.AgencyService</value></property>
+    </bean>
+
+    <bean id="jobInfoService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/JobInfoService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.JobInfoService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.JobInfoService</value></property>
+    </bean>
+
+    <bean id="proxyService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/ProxyService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.ProxyService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.ProxyService</value></property>
+    </bean>
+
+    <bean id="codeplugService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/CodeplugService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.CodeplugService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.CodeplugService</value></property>
+    </bean>
+
+    <bean id="logService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/LogService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.LogService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.LogService</value></property>
+    </bean>
+
+    <bean id="versionService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/VersionService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.VersionService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.VersionService</value></property>
+    </bean>
+
+    <bean id="groupService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/GroupService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.GroupService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.GroupService</value></property>
+    </bean>
+
+    <bean id="permissionTemplateService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/PermissionTemplateService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.PermissionTemplateService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.PermissionTemplateService</value></property>
+    </bean>
+
+    <bean id="flexeraLicenseService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/FlexeraLicenseService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.FlexeraLicenseService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.FlexeraLicenseService</value></property>
+    </bean>
+
+    <bean id="accessControlService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/AccessControlService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.AccessControlService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.AccessControlService</value></property>
+    </bean>
+
+    <bean id="ldapService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/LdapService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.LdapService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.LdapService</value></property>
+    </bean>
+
+    <bean id="logoutService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl"><value>https://${address}/dms/remote/LogoutService</value></property>
+        <property name="serviceInterface"><value>com.mot.dm.common.service.LogoutService</value></property>
+        <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+    </bean>
+
+    <bean id="remoteAuthenticationProvider"
+        class="org.springframework.security.authentication.rcp.RemoteAuthenticationProvider">
+        <property name="remoteAuthenticationManager" ref="remoteAuthenticationService" />
+    </bean>
+
+    <bean id="remoteAuthenticationService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl"><value>https://${address}/dms/remote/RemoteAuthenticationService</value></property>
+        <property name="serviceInterface">
+            <value>org.springframework.security.authentication.rcp.RemoteAuthenticationManager</value>
+        </property>
+        <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+    </bean>
+
+    <bean id="scheduleService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+                <property name="serviceUrl"><value>https://${address}/dms/remote/scheduleService</value></property>
+                <property name="serviceInterface"><value>com.mot.dm.common.service.QRTZShceduleJobService</value></property>
+                <property name="httpInvokerRequestExecutor"><ref bean="invoker"/></property>
+            </bean>
+        </property>
+        <property name="proxyInterfaces"><value>com.mot.dm.common.service.QRTZShceduleJobService</value></property>
+    </bean>
+
+    <bean id="invoker" class="com.mot.dm.client.delegation.ClientAuthCommonsHttpInvokerRequestExecutor">
+        <property name="readTimeout" value="0" />
+    </bean>
+</beans>
