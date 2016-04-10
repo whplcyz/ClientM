@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.mot.dm.R;
 
 import java.util.ArrayList;
@@ -40,6 +39,22 @@ public class RightListViewFragment extends Fragment {
     public void onAttach(Activity activity)
     {
         super.onAttach(activity);
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
 
@@ -95,7 +110,38 @@ public class RightListViewFragment extends Fragment {
         }
     }
 
+    private String getRadioType(int radioType) {
+        switch (radioType) {
+            case -1:
+                return "Type";
+            case 1:
+                return "MTP3000";
+            case 2:
+                return "MTP6000";
+            default:
+                return "MTP850";
+        }
+    }
+
+    private String getRadioStatus(int radioStatus) {
+        switch (radioStatus) {
+            case -1:
+                return "Status";
+            case 1:
+                return "Ready";
+            case 2:
+                return "Running";
+            default:
+                return "Unknown";
+        }
+    }
+
     private class DeviceListViewAdapter extends ArrayAdapter {
+
+        private LayoutInflater mInflater;
+        private List<DeviceInfo> mfilelist;
+        private Bitmap mIconCollapse;
+        private Bitmap mIconExpand;
 
         public DeviceListViewAdapter(Context context, int textViewResourceId,
                                      List objects) {
@@ -108,12 +154,6 @@ public class RightListViewFragment extends Fragment {
                     R.drawable.outline_list_expand);
 
         }
-
-        private LayoutInflater mInflater;
-        private List<DeviceInfo> mfilelist;
-        private Bitmap mIconCollapse;
-        private Bitmap mIconExpand;
-
 
         public int getCount() {
             return mfilelist.size();
@@ -150,36 +190,6 @@ public class RightListViewFragment extends Fragment {
             holder.radioSoftver.setText(String.format("%-10s",deviceInfo.SoftwareVer));
 
             return convertView;
-        }
-    }
-
-    private String getRadioType(int radioType)
-    {
-        switch (radioType)
-        {
-            case -1:
-                return "Type";
-            case 1:
-                return "MTP3000";
-            case 2:
-                return "MTP6000";
-            default:
-                return  "MTP850";
-        }
-    }
-
-    private String getRadioStatus(int radioStatus)
-    {
-        switch (radioStatus)
-        {
-            case -1:
-                return "Status";
-            case 1:
-                return "Ready";
-            case 2:
-                return "Running";
-            default:
-                return  "Unknown";
         }
     }
 
